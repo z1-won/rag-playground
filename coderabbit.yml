@@ -1,0 +1,37 @@
+version: 1
+
+review_rules:
+  - title: "Python Style & Clean Code"
+    description: "Ensure PEP8, meaningful variable names, no unused imports, and maintainable structure."
+    applies_to: "*.py"
+
+  - title: "RAG Architecture Consistency"
+    description: "Check structuring of BaseEmbedder, BaseVectorStore, BaseRetriever, and module separation."
+    applies_to: "rag/**/*.py"
+
+  - title: "Chunking / Parsing Robustness"
+    description: "Flag fragile regex, non-deterministic parsing logic, or overly long chunk sizes."
+    applies_to: "rag/pdf_parser.py"
+
+  - title: "VectorStore Performance"
+    description: "Check cosine similarity implementation, numpy operations, and memory safety."
+    applies_to: "rag/vector_store.py"
+
+  - title: "Embedding Efficiency"
+    description: "Warn if encode operations risk OOM or batch size is not controlled."
+    applies_to: "rag/bge_embedder.py"
+
+  - title: "Retriever Quality"
+    description: "Look for proper query embedding, top-k retrieval logic, and potential ranking issues."
+    applies_to: "rag/retriever.py"
+
+ignore:
+  - "venv/"
+  - "__pycache__/"
+  - "data/*"
+  - "*.pdf"
+
+general:
+  require_tests: false
+  auto_fix: true
+  max_comments: 30
