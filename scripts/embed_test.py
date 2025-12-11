@@ -30,7 +30,7 @@ class BGEEmbedder(BaseEmbedder):
 if __name__ == "__main__":
     embedder = BGEEmbedder()
 
-    texts = ["안녕", "지원이 요즘 트랜스포머 공부 중이야"]
+    texts = ["정은원은 43번", "류현진은 99번"]
     vectors = embedder.encode(texts)
 
     print("문장 개수:", len(texts))

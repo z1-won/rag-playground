@@ -1,6 +1,6 @@
 from typing import List
 from sentence_transformers import SentenceTransformer
-from base_embedder import BaseEmbedder
+from .base_embedder import BaseEmbedder
 
 class BGEEmbedder(BaseEmbedder):
     def __init__(self):
